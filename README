@@ -13,9 +13,20 @@ The run:
 
     bundle install  
 
-As simply_load uses a javascript files, you will be required to install it for use (also remember to include it with javascript_include_tag):
+As simply_edit uses a javascript files, you will be required to install it for use (also remember to include it with javascript_include_tag):
 
     rails g simply_edit  
+
+First you will need to include jquery-ui to you javascript files if you want to use the date_picker functionality.
+
+Rails 3.1 (add this to application.js):
+
+//= require jquery-ui
+
+<= Rails 3.0:
+
+Add the jquery-ui.js file of your preference to you layout file.
+
 
 Using:
 
@@ -30,11 +41,11 @@ Callbacks:
 In order to react to a edit success and error event, you will need to listen to the "simply_edit:success" and "simply_edit:error" events like this:
 
 $("#simply_edit_object").live("simply_edit:success", function(data){
-	alert("Edited");
+	alert("Updated sucessfully.");
 }
 
 $("#simply_edit_object").live("simply_edit:error", function(data){
-	alert("Edited");
+	alert("Failed to edit.");
 }
 
 That is basically it.
