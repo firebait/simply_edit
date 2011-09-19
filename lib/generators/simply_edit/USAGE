@@ -1,0 +1,8 @@
+Description:
+    This will copy the required javascript file to the Rails application ("public/javascripts/simply_edit.js" or "app/assets/javascripts/simply_edit.js")
+
+Example:
+    rails generate simply_edit
+
+    This will create:
+        public/javascripts/simply_edit.js or app/assets/javascripts/simply_edit.js

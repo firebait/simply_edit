@@ -1,0 +1,42 @@
+Simply edit is a view helper that convert any label into an editable text, textarea or date picker field using JQuery.
+
+Why did I make a gem out of this little thing? I felt it was a waste of time to got to a form if you only needed to update a title, content or a date. The helper currently only supports, text, textarea and date. The date field is basically a jQuery date control so styling in depends on the jQuery UI templating framework.
+Anyway, hope you guys like it and sure there is always room for improvement.
+
+Installing:
+
+Add this to you Gemfile:
+
+    gem 'simply_edit'  
+
+The run:
+
+    bundle install  
+
+As simply_load uses a javascript files, you will be required to install it for use (also remember to include it with javascript_include_tag):
+
+    rails g simply_edit  
+
+Using:
+
+On any of your views just use this code:
+
+	<%= simply_edit_text_field(object, field, update_url, {other options} %>
+	<%= simply_edit_text_area(object, field, update_url, {other options} %>
+	<%= simply_edit_date_field(object, field, update_url, {other options} %> 
+
+Callbacks:
+
+In order to react to a edit success and error event, you will need to listen to the "simply_edit:success" and "simply_edit:error" events like this:
+
+$("#simply_edit_object").live("simply_edit:success", function(data){
+	alert("Edited");
+}
+
+$("#simply_edit_object").live("simply_edit:error", function(data){
+	alert("Edited");
+}
+
+That is basically it.
+
+Hope you like it!!
